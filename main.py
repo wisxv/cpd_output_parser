@@ -102,17 +102,17 @@ def main():
         print(f"Указанная директория {source_directory} не существует.")
         sys.exit(1)
 
-    parser = CDPParser()
+    cdp_parser = CDPParser()
 
     for filename in source_directory.iterdir():
         if filename.is_file():
-            parser.parse_and_append(filename)
+            cdp_parser.parse_and_append(filename)
 
-    # parser.dump()
-    parser.make_unique()
+    # cdp_parser.print()
+    cdp_parser.make_unique()
     # print('-'*100)
-    # parser.dump()
-    draw_topology(parser.get_copy())
+    # cdp_parser.print()
+    draw_topology(cdp_parser.get_copy())
 
 
 if __name__ == "__main__":
